@@ -1,11 +1,14 @@
 .wrap {
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  border-radius: 1rem;
+  margin-bottom: 8px;
   max-width: 80%;
-  min-height: 2rem;
-  min-width: min(75%, 120px);
-  padding: 0.75rem;
+  min-height: max(2rem, min-content);
+  padding: 0.5rem 1rem;
   text-align: left;
+}
+
+.timestamp {
+  font-size: 0.6em;
+  margin-top: 4px;
+  opacity: 0.5;
 }

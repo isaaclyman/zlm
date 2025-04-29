@@ -1,0 +1,6 @@
+.wrap {
+  margin-bottom: 8px;
+  max-width: 80%;
+  min-height: max(2rem, min-content);
+  text-align: left;
+}
