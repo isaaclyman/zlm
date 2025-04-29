@@ -2,14 +2,14 @@ import type { Component } from "solid-js";
 
 import logo from "./logo.svg";
 import styles from "./App.module.css";
-import { Chat } from "./components/chat";
+import { Chat } from "./components/Chat";
 
 const App: Component = () => {
   return (
     <div class={styles.App}>
       <header class={styles.header}>
         <img class={styles.logo} src="/src/assets/icon.svg" alt="ZLM logo" />
-        Zero Language Model 18u.rp4-advanced
+        <span>Zero Language Model 18u.rp4-advanced</span>
       </header>
       <section class={styles.content}>
         <Chat></Chat>

@@ -7,7 +7,7 @@
 }
 
 .messages {
-  background-color: antiquewhite;
+  background-color: #F7F5F3;
   border: 1px solid #555;
   border-radius: 8px;
   box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.15);
@@ -19,12 +19,15 @@
 }
 
 .history {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  padding: 8px;
+  overflow-y: auto;
 }
 
 .controls {
   background-color: white;
   border-top: 1px solid #555;
-  height: 3.5rem;
   width: 100%;
 }

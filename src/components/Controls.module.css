@@ -1,0 +1,129 @@
+/* https://scottaohara.github.io/a11y_styled_form_controls/src/radio-button--pill/ */
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+/* MODE */
+
+.mode {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+	margin: 0;
+	padding: 0.5em 0;
+  width: min(25%, 300px);
+}
+
+.mode fieldset {
+  border: 0;
+}
+
+.modeLegend {
+  display: block;
+	font-size: inherit;
+	font-weight: bold;
+	padding: 0;
+	width: 100%;
+}
+
+.pillWrap {
+	display: inline-block;
+	padding: .15em;
+}
+
+.pillItem {
+  cursor: pointer;
+	display: inline-block;
+	position: relative;
+}
+
+.pillInput {
+	appearance: none;
+	background: none;
+	border: 2px solid;
+  cursor: pointer;
+	height: 100%;
+	left: 0;
+	opacity: .00001;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.pillLabel {
+  border-radius: 2em;
+  border: 2px solid transparent;
+  color: #083851;
+  display: block;
+  padding: .15em .75em;
+}
+
+.pillInput:hover ~ label,
+.pillLabel:hover {
+	background: #E2F1FD;
+	border-color: #2196f3;
+}
+
+.pillInput:checked + label {
+	background: #2196f3;
+	color: #fff;
+}
+
+.pillLabel:after {
+	border: 2px solid;
+	border-color: rgba(0,0,0,0);
+	border-radius: 2em;
+	bottom: 0;
+	content: "";
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition:
+		bottom .2s ease-in-out,
+		border-color .2s ease-in-out,
+		left .2s ease-in-out,
+		right .2s ease-in-out,
+		top .2s ease-in-out;
+}
+
+.pillInput:focus ~ label:after  {
+	border-color: #2196f3;
+	bottom: -.25em;
+	left: -.25em;
+	right: -.25em;
+	top: -.25em;
+}
+
+/* INPUT */
+
+.queryWrap {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.query {
+  border: 0;
+  flex: 1;
+  outline: none;
+  padding: 0.5em;
+  resize: none;
+  text-align: left;
+}
+
+.queryInstruction {
+  font-size: 0.65em;
+  opacity: 0.65;
+  padding: 0.15em 0.75em;
+  text-align: left;
+}

@@ -1,0 +1,11 @@
+.wrap {
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+  min-height: 2rem;
+  min-width: min(75%, 120px);
+  padding: 0.75rem;
+  text-align: left;
+}

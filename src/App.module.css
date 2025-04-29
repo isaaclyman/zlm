@@ -16,6 +16,10 @@
   margin-bottom: 16px;
 }
 
+.header span {
+  padding-bottom: 0.5em;
+}
+
 .logo {
   aspect-ratio: 1/1;
   margin-right: 8px;
