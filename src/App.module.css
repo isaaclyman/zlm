@@ -1,0 +1,32 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 24px;
+  text-align: center;
+  width: 100vw;
+}
+
+.header {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.7rem;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.logo {
+  aspect-ratio: 1/1;
+  margin-right: 8px;
+  width: min(32px, 25%);
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  font-size: 0.6rem;
+  margin-top: 16px;
+}
