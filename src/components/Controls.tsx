@@ -1,10 +1,16 @@
-import { Component, JSX } from "solid-js";
+import { Accessor, Component, JSX } from "solid-js";
 import styles from "./Controls.module.css";
-import { query, setQuery } from "./state";
+import { query, ResponseMode, setQuery, setResponseMode } from "./state";
 import actions from "./actions";
 
-export const Controls: Component = () => {
-  const handleInput: JSX.EventHandlerUnion<HTMLTextAreaElement, InputEvent> = (e) => {
+export interface ControlsProps {
+  canvas: Accessor<HTMLCanvasElement | undefined>;
+}
+
+export const Controls: Component<ControlsProps> = (props) => {
+  const handleInput: JSX.EventHandlerUnion<HTMLTextAreaElement, InputEvent> = (
+    e
+  ) => {
     setQuery(e.currentTarget.value);
   };
 
@@ -15,11 +21,20 @@ export const Controls: Component = () => {
 
     e.preventDefault();
 
-    if (query() === '') {
+    if (query() === "") {
       return;
     }
-    
-    actions.sendUserMessage(query());
+
+    actions.sendUserMessage(query(), props.canvas());
+  };
+
+  const handleModeChange: JSX.EventHandlerWithOptionsUnion<
+    HTMLInputElement,
+    Event,
+    JSX.ChangeEventHandler<HTMLInputElement, Event>
+  > = (e) => {
+    const choice = e.currentTarget.value as ResponseMode;
+    setResponseMode(choice);
   };
 
   return (
@@ -46,6 +61,8 @@ export const Controls: Component = () => {
                 type="radio"
                 name="modes"
                 id="text-mode"
+                value={ResponseMode.Text}
+                on:change={handleModeChange}
                 checked
               />
               <label class={styles.pillLabel} for="text-mode">
@@ -58,6 +75,8 @@ export const Controls: Component = () => {
                 type="radio"
                 name="modes"
                 id="image-mode"
+                value={ResponseMode.Image}
+                on:change={handleModeChange}
               />
               <label class={styles.pillLabel} for="image-mode">
                 Image

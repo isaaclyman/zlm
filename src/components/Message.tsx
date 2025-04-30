@@ -1,6 +1,6 @@
-import { Component, JSX } from "solid-js";
+import { Component, JSX, Show } from "solid-js";
 import styles from "./Message.module.css";
-import { MessageSource, SingleMessage } from "./state";
+import { MessageImage, MessageSource, MessageText, SingleMessage } from "./state";
 
 export interface MessageProps {
   message: SingleMessage;
@@ -23,7 +23,12 @@ export const Message: Component<MessageProps> = (props) => {
 
   return (
     <div class={styles.wrap} style={style}>
-      <div>{props.message.text}</div>
+      <Show when={(props.message as MessageText).text}>
+        <div>{(props.message as MessageText).text}</div>
+      </Show>
+      <Show when={(props.message as MessageImage).imageDataUrl}>
+        <img src={(props.message as MessageImage).imageDataUrl} class={styles.messageImage} />
+      </Show>
       <div class={styles.timestamp}>
         {new Date(props.message.date).toLocaleTimeString()}
       </div>
