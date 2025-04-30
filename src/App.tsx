@@ -1,7 +1,7 @@
 import type { Component } from "solid-js";
 
 import styles from "./App.module.css";
-import { Chat } from "./components/Chat";
+import { Chat } from "./comp/Chat";
 
 const App: Component = () => {
   return (
