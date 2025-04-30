@@ -4,6 +4,9 @@
   "description": "",
   "type": "module",
   "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": "20.9.0"
+  },
   "scripts": {
     "start": "vite",
     "dev": "vite",
