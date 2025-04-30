@@ -51,6 +51,7 @@ const responses = {
   no: `Whatever.`,
   number: `This choice has been ignored.`,
   ok: `All hail the mighty conversationalist.`,
+  onlyPlease: `Please what?`,
   programming: `Sorry, I can't help you with any programming tasks. As of ${new Date().getFullYear()} it is technically impossible for chatbots to write code.`,
   simp: `If I'm so great and holy, why would I spend any time on this?`,
   swear: `I cannot respond to prompts containing profanity as it would affect the resale value of your personal data.`,
@@ -93,6 +94,10 @@ export const getTextResponse = (query: string): string => {
     lower.endsWith("?")
   ) {
     return responses.uncertain;
+  }
+
+  if (punctuationless === 'please') {
+    return responses.onlyPlease;
   }
 
   if (punctuationless === "yes") {
