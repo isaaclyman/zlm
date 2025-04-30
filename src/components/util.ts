@@ -1,7 +1,10 @@
-function intBetween(low: number, high: number): number {
-  return Math.floor(Math.random() * (high - low + 1)) + low;
-}
+export function shuffleInPlace<T>(array: T[]): void {
+  let currentIndex = array.length;
 
-export function pickAnyCard<T>(arr: T[]): T {
-  return arr[intBetween(0, arr.length - 1)];
+  while (currentIndex != 0) {
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
 }
