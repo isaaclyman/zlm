@@ -9,3 +9,9 @@ npm install
 npm run dev
 npm build
 ```
+
+## Contributing
+
+Most of ZLM's logic is in `getTextResponse.ts`.
+
+PR's will only be accepted if they make the chatbot more annoying.
